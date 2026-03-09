@@ -1,24 +1,24 @@
 name: CI PIPELINE
 
-on: 
+on:
   push:
-    branches: [ main ]
+    branches: [main]
 
-jobs: 
-  build: 
+jobs:
+  build:
     runs-on: ubuntu-latest
 
-    steps: 
+    steps:
       - name: Checkout code
-      uses: actions/checkout@v5
+        uses: actions/checkout@v5
 
       - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with: 
-        node-version: 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
 
       - name: Install dependencies
-      run: npm install
+        run: npm install
 
       - name: Run tests
-      run: npm run test
+        run: npm run test
